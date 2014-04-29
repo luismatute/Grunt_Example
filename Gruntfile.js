@@ -5,9 +5,9 @@ var grunt_wrap = function (grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
 			dist: {
-				expand: true,
+				expand: true, //Dynamic expansion
 				cwd: 'assets/sass/',
-				src: ['**/*.scss', '!**/_*.scss'],
+				src: ['**/*.scss'],
 				dest: 'dist/css',
 				ext: '.css',
 				options: {
@@ -17,18 +17,12 @@ var grunt_wrap = function (grunt) {
 		},
 		uglify: {
 			build: {
-				options: {
-					report: 'gzip',
-					mangle: {
-						except: ['!*.min.js']
-					}
-				},
 				files: [{
-					expand: true,
+					expand: true, //Dynamic expansion
 					cwd: 'assets/js',
 					src: '**/*.js',
 					dest: 'dist/js/',
-					ext: '.min.js'
+					ext: '.js'
 				}]
 			}
 		},
@@ -39,10 +33,10 @@ var grunt_wrap = function (grunt) {
 				},
 				files: [
 					{
-						expand: true,
+						expand: true, //Dynamic expansion
 						cwd: 'assets/img/',
-						src: ['**/*.png', '!compressed/**/*.png'],
-						dest: 'dist/img/compressed/',
+						src: ['**/*.png'],
+						dest: 'dist/img/',
 						ext: '.png'
 					}
 				]
@@ -53,10 +47,10 @@ var grunt_wrap = function (grunt) {
 				},
 				files: [
 					{
-						expand: true,
+						expand: true, //Dynamic expansion
 						cwd: 'assets/img/',
-						src: ['**/*.jpg','**/*.jpeg', '!compressed/**/*.{jpg,jpeg}'],
-						dest: 'dist/img/compressed/',
+						src: ['**/*.jpg','**/*.jpeg'],
+						dest: 'dist/img/',
 						ext: '.jpg'
 					}
 				]
@@ -66,10 +60,10 @@ var grunt_wrap = function (grunt) {
 					interlaced: true
 				},
 				files: [{
-					expand: true,
+					expand: true, //Dynamic expansion
 					cwd: 'assets/img/',
-					src: ['**/*.gif', '!compressed/**/*.gif'],
-					dest: 'dist/img/compressed/',
+					src: ['**/*.gif'],
+					dest: 'dist/img/',
 					ext: '.gif'
 				}]
 			}
@@ -90,7 +84,7 @@ var grunt_wrap = function (grunt) {
 				}
 			},
 			images: {
-				files: ['assets/img/**/*.{png,jpg,jpeg,gif}', 'assets/img/*.{png,jpg,jpeg,gif}'],
+				files: ['assets/img/**/*.{png,jpg,jpeg,gif}'],
 				tasks: ['imagemin'],
 				options: {
 					spawn: false,

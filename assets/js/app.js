@@ -1,6 +1,7 @@
-$(document).ready(function () {
-	var randomasignment = 0;
+//
+// Just a testing script
+//------------------------------
 
+$(document).ready(function () {
 	alert(1);
-	var test = 'wow this looks awesome';
 });
