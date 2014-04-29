@@ -1,0 +1,15 @@
+{
+  "name": "grunt_example",
+  "version": "0.0.1",
+  "description": "This is an example of a basic setup for gruntjs, which compiles SASS files to CSS, minifies JS and optimizes images",
+  "private": true,
+  "scripts": {},
+  "author": "Luis Matute",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.4",
+    "grunt-contrib-imagemin": "^0.6.1"
+  }
+}
